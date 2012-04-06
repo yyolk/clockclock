@@ -69,11 +69,12 @@ a img {
 
 /* line 23, ../../sass/screen.scss */
 #container {
-  background-color: black;
+  background-color: #ee472e;
   font-size: 99px;
+  text-shadow: rgba(183, 0, 0, 0.6) 0 0 4px, rgba(238, 71, 46, 0.2) 0 0 10px, rgba(183, 0, 0, 0.5) 3px 3px 10px;
   font-family: arial, monospace;
   text-align: center;
-  color: white;
+  color: #ee472e;
   position: absolute;
   top: 25%;
   bottom: 25%;
@@ -81,7 +82,7 @@ a img {
   right: 25%;
 }
 
-/* line 36, ../../sass/screen.scss */
+/* line 42, ../../sass/screen.scss */
 #clockclock {
   position: absolute;
   top: 35%;
@@ -93,13 +94,14 @@ a img {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  background-color: rgba(192, 192, 192, 0.4);
 }
 /* line 7, ../../../../../.rbenv/versions/1.9.3-rc1/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #clockclock {
   *display: inline;
 }
 
-/* line 41, ../../sass/screen.scss */
+/* line 48, ../../sass/screen.scss */
 #parent, #container {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -112,9 +114,9 @@ a img {
   *display: inline;
 }
 
-/* line 44, ../../sass/screen.scss */
+/* line 51, ../../sass/screen.scss */
 #parent {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(90, 90, 90, 0.1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -122,7 +124,7 @@ a img {
   right: 0;
 }
 
-/* line 49, ../../sass/screen.scss */
+/* line 56, ../../sass/screen.scss */
 body {
   width: 100%;
   height: 100%;

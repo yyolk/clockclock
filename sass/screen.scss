@@ -24,11 +24,17 @@
     
 
 
-    background-color: black;
+    background-color: #ee472e;
     font-size:99px;
+@include text-shadow(
+        transparentize(#b70000, 0.4) 0 0 4px,
+        transparentize(#ee472e, 0.8) 0 0 10px,
+        transparentize(#b70000, 0.5) 3px 3px 10px
+        );
+
     font-family:arial, monospace;
     text-align:center;
-    color:white; 
+    color:#ee472e; 
     @include stretch(25%, 25%, 25%, 25%);
 
 }
@@ -36,13 +42,14 @@
 #clockclock{
 @include stretch(35%);
 @include inline-block;
+background-color:transparentize(#c0c0c0,0.6);
 }
 @import "compass/utilities";
 #parent, #container{
     @include inline-block;
 }
 #parent{
-    background-color: darken(rgba(33,120,120, 0.9), 40%);
+    background-color: darken(transparentize(#c0c0c0, 0.9), 40%);
     @include stretch;
 }
 
