@@ -1,0 +1,53 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+
+// Include h5bp libs
+
+@import "compass/layout/stretching";
+@import "compass/css3";
+
+
+#container{
+    @include border-radius(12px);
+    border: 15px solid rgba(33,120,120,0.4);
+}
+
+
+#container{
+    
+
+
+    background-color: black;
+    font-size:99px;
+    font-family:arial, monospace;
+    text-align:center;
+    color:white; 
+    @include stretch(25%, 25%, 25%, 25%);
+
+}
+
+#clockclock{
+@include stretch(35%);
+@include inline-block;
+}
+@import "compass/utilities";
+#parent, #container{
+    @include inline-block;
+}
+#parent{
+    background-color: darken(rgba(33,120,120, 0.9), 40%);
+    @include stretch;
+}
+
+body{
+    
+    width:100%;
+    height:100%;
+}

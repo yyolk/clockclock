@@ -1,0 +1,68 @@
+!!!5
+
+%head
+
+  %title
+    Clock, clock!
+  %link{:rel=>"stylesheet", :href=>"css/screen.css", :type=>"text/css", :media=>"screen"}
+  :javascript
+    var d;
+    var h;
+    var m;
+    var s;
+    
+    function get_time() {
+        d = new Date();
+        h = d.getHours();
+        m = d.getMinutes();
+        s = d.getSeconds();
+        display_time();
+    }
+        
+    function display_time() {
+        var meridian='AM';
+
+        if(h>12){
+            h=h-12;
+            meridian='PM';
+        }
+        document.getElementById('clockclock').innerHTML=h+":"+m+":"+s +" "+ meridian + "<br/>";
+        setTimeout('get_time()', 10);
+    }
+    
+
+        
+    function time_segments()    {
+        for(i=0; i<23; i++) {
+            x = map(i, 0, 23, 0, window.innerWidth);
+            currTime = document.createElement("div");
+            
+    //make a distinction between current time and other times
+        if(i==h)    {
+            currTime.setAttribute('style', 'position: absolute; top:' + window.innerHeight/2+ 'px;left: ' + x + 'px; font-size: 30px; border-left: dotted 1px; color: #0f9;height: 200px');
+        } else  {
+            currTime.setAttribute('style', 'position: absolute; top:' + window.innerHeight/2+ 'px;left: ' + x + 'px; font-size: 30px; border-left: dotted 1px; color: #333333;height: 200px');
+        }
+
+            document.body.appendChild(currTime);
+        }
+    
+    }
+    
+    window.onload = function()  { 
+        get_time(); 
+        time_segments();
+    
+    }
+    
+    window.onresize = function()    {
+    document.body.innerHTML="<div id='clock'></div>";
+        time_segments();
+    
+    } 
+
+%body
+  #parent
+    #container
+      #clockclock
+        00:00:00    
