@@ -6,10 +6,25 @@
   <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css' />
   <script type='text/javascript'>
     //<![CDATA[
+      function pad(number, length) {
+      
+        var str = '' + number;
+        while (str.length < length) {
+          str = '0' + str;
+        }
+      
+        return str;
+      
+      }
+    //]]>
+  </script>
+  <script type='text/javascript'>
+    //<![CDATA[
       var d;
       var h;
       var m;
       var s;
+      
       
       function get_time() {
           d = new Date();
@@ -18,16 +33,21 @@
           s = d.getSeconds();
           display_time();
       }
+      
           
       function display_time() {
+        var timetime;
+        // determin if it's AM or PM
           var meridian='AM';
-      
           if(h>12){
-              h=h-12;
+            h=h-12;
               meridian='PM';
-          }
-          document.getElementById('clockclock').innerHTML=h+":"+m+":"+s +" "+ meridian + "<br/>";
-          setTimeout('get_time()', 10);
+        }
+         timetime = ""+pad(h,2)+":"+pad(m,2)+":"+pad(s,2)+" "+meridian;
+          document.getElementById('clockclock').innerHTML = timetime
+          // timeout for 10 ms, since this is a recursive loop.
+          // after 10ms, call `get_time()` which will start the process over again
+          setTimeout('get_time()', 50);
       }
       
       
@@ -51,15 +71,16 @@
       
       window.onload = function()  { 
           get_time(); 
-          time_segments();
+          //time_segments();
       
       }
-      
+      /**
       window.onresize = function()    {
       document.body.innerHTML="<div id='clock'></div>";
           time_segments();
       
       }
+      **/
     //]]>
   </script>
 </head>

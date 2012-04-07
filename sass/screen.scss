@@ -16,37 +16,39 @@
 
 #container{
     @include border-radius(12px);
-    border: 15px solid rgba(33,120,120,0.4);
+    border: 3px solid transparentize(#ff1616, 0.3);
 }
 
 
 #container{
-    
 
 
-    background-color: #ee472e;
+
+    //background-color: #ee472e;
     font-size:99px;
-@include text-shadow(
-        transparentize(#b70000, 0.4) 0 0 4px,
-        transparentize(#ee472e, 0.8) 0 0 10px,
-        transparentize(#b70000, 0.5) 3px 3px 10px
-        );
+    @include text-shadow(
+    transparentize(#b70000, 0.4) 0 0 4px,
+    transparentize(#ee472e, 0.8) 0 0 10px,
+    transparentize(#b70000, 0.5) 3px 3px 10px
+    );
 
     font-family:arial, monospace;
+    letter-spacing:120%;
     text-align:center;
-    color:#ee472e; 
-    @include stretch(25%, 25%, 25%, 25%);
+    color:lighten(#ff1616,10%); 
+    @include stretch(20%, 20%, 20%, 20%);
 
 }
 
 #clockclock{
-@include stretch(35%);
-@include inline-block;
-background-color:transparentize(#c0c0c0,0.6);
+    @include stretch(35%);
+    @include inline-block;
 }
 @import "compass/utilities";
 #parent, #container{
     @include inline-block;
+
+    background-color:transparentize(#c0c0c0,0.6);
 }
 #parent{
     background-color: darken(transparentize(#c0c0c0, 0.9), 40%);
@@ -54,7 +56,7 @@ background-color:transparentize(#c0c0c0,0.6);
 }
 
 body{
-    
+
     width:100%;
     height:100%;
 }
